@@ -30,8 +30,30 @@
                         <div class="col-sm-4 user-icon">
                             <img src="../../assets/image/1.png" alt="">
                         </div>
-                        <div class="col-sm-7"></div>
-                        <div class="col-sm-1"></div>
+                        <div class="col-sm-7">
+                            <ul class="list-group">
+                                <li class="list-group-item"> Name :
+                                    <span class="fw-bold">Name</span>
+                                </li>
+                                <li class="list-group-item"> E-mail :
+                                    <span class="fw-bold">shorif@gmail.com</span>
+                                </li>
+                                <li class="list-group-item"> Mobile :
+                                    <span class="fw-bold">01010101</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-1 add-contact-icon">
+                            <a routerLink="/contacts/view/:contactId" class="btn btn-warning">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a routerLink="/contacts/edit/:contactId" class="btn btn-success">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
