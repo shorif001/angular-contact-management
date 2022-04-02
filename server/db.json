@@ -1,0 +1,38 @@
+{
+    "contacts": [
+      { 
+          "id": "s1",
+          "name": "Shorif",
+          "company": "simec",
+          "email": "shorif@gmail.com",
+          "title": "youtube",
+          "mobile": "010101",
+          "photo": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconspng.com%2F&psig=AOvVaw24gNJYEuHTF8xHaBwklAb2&ust=1648974205871000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKDi_OP59PYCFQAAAAAdAAAAABAL",
+          "groudId": "2"
+       },
+      { 
+          "id": "s2",
+          "name": "Shorif Ahmed",
+          "company": "simecsystem",
+          "email": "shorif1@gmail.com",
+          "title": "youtube1",
+          "mobile": "02020202",
+          "photo": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconspng.com%2F&psig=AOvVaw24gNJYEuHTF8xHaBwklAb2&ust=1648974205871000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKDi_OP59PYCFQAAAAAdAAAAABAL",
+          "groudId": "3"
+       }
+    ],
+    "groups": [
+      { 
+          "id":"1",
+          "name":"Colleague"
+       },
+      { 
+          "id":"2",
+          "name":"Family"
+       },
+      { 
+          "id":"3",
+          "name":"Friend"
+       }
+    ]
+  }

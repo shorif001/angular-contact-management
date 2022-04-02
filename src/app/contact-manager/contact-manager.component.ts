@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MyContact } from '../models/myContact';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-contact-manager',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactManagerComponent implements OnInit {
 
-  constructor() { }
+  loading:boolean = false;
+  contacts:MyContact[] = [];
+  errorMessage:string | null = null;
+
+  constructor(private cantService:ContactService) { }
 
   ngOnInit(): void {
+    this.loading = true;
+    this.cantService.getAllContacts().subscribe((data:MyContact[])=>{
+      this.contacts = data;
+      this.loading = false;
+    })
   }
 
 }
