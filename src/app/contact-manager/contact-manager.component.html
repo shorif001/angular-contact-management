@@ -21,25 +21,25 @@
 
 <!-- card design -->
 
-<div class="container mt-4">
+<div class="container mt-4" *ngIf="!loading && contacts.length >0">
     <div class="row">
-        <div class="col-md-6">
+        <div *ngFor="let contact of contacts" class="col-md-6" >
             <div class="card list-group-item-success">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-4 user-icon">
-                            <img src="../../assets/image/1.png" alt="">
+                            <img [src]="contact.photo">
                         </div>
                         <div class="col-sm-7">
                             <ul class="list-group">
                                 <li class="list-group-item"> Name :
-                                    <span class="fw-bold">Name</span>
+                                    <span class="fw-bold">{{contact.name}}</span>
                                 </li>
                                 <li class="list-group-item"> E-mail :
-                                    <span class="fw-bold">shorif@gmail.com</span>
+                                    <span class="fw-bold">{{contact.email}}</span>
                                 </li>
                                 <li class="list-group-item"> Mobile :
-                                    <span class="fw-bold">01010101</span>
+                                    <span class="fw-bold">{{contact.mobile}}</span>
                                 </li>
                             </ul>
                         </div>
