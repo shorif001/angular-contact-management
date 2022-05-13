@@ -9,15 +9,16 @@ import { ContactService } from '../services/contact.service';
 })
 export class ContactManagerComponent implements OnInit {
 
+  
   public loading:boolean = false;
-  public contacts:MyContact[] = [];
+  public contacts:any = [];
   public errorMessage:string | null = null;
 
   constructor(private contService:ContactService) { }
 
   ngOnInit(): void {
     this.loading = true;
-    this.contService.getAllContacts().subscribe((data:any)=>{
+    this.contService.getAllContacts().subscribe((data:MyContact)=>{
       this.contacts = data;
       this.loading = false;
     }, (error)=>{
