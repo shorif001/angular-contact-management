@@ -9,35 +9,55 @@
     </div>
 </div>
 
+<!-- Condition base Spinner and error message code here -->
+<!-- Condition based Loading -->
+<div *ngIf="loading">
+    <app-spinner></app-spinner>
+  </div>
+  
+  <!-- Display Error Message -->
+  
+  <div *ngIf="!loading && errorMessage">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="h4 text-danger fw-bold">{{errorMessage}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <!-- view contact details -->
-<div class="container">
+<div class="container" *ngIf="!loading && isNotEmpty()">
     <div class="row">
         <div class="col-sm-4 contact-img">
-            <img src="../../assets/image/1.png" alt="user">
+            <img src="{{contact.photo}}" alt="user">
         </div>
         <div class="col-sm-6">
             <ul class="list-group">
-                <li class="list-group-item list-group-item-success">
-                    <span class="fw-bold">Name</span>
+                <li class="list-group-item list-group-item-success">Name :
+                    <span class="fw-bold">{{contact.name}}</span>
                 </li>
                 <li class="list-group-item list-group-item-success"> E-mail :
-                    <span class="fw-bold">shorif@gmail.com</span>
+                    <span class="fw-bold">{{contact.email}}</span>
                 </li>
                 <li class="list-group-item list-group-item-success"> Mobile :
-                    <span class="fw-bold">01010101</span>
+                    <span class="fw-bold">{{contact.mobile}}</span>
                 </li>
                 <li class="list-group-item list-group-item-success"> Company :
-                    <span class="fw-bold">company</span>
+                    <span class="fw-bold">{{contact.company}}</span>
                 </li>
                 <li class="list-group-item list-group-item-success"> Title :
-                    <span class="fw-bold">title</span>
+                    <span class="fw-bold">{{contact.title}}</span>
                 </li>
                 <li class="list-group-item list-group-item-success"> Group Name :
-                    <span class="fw-bold">Family</span>
+                    <span class="fw-bold">{{contact.groupId}}</span>
                 </li>
             </ul>
         </div>
     </div>
+
+    <!-- <pre>{{contact | json}}</pre> -->
     <div class="row">
         <div class="col mt-4">
             <a routerLink="/" class="btn btn-warning"><i class="fa fa-arrow-alt-circle-left"></i> Go Back</a>
