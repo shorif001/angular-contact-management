@@ -67,10 +67,10 @@
               <a routerLink="/contacts/view/{{contact.id}}" class="btn btn-warning">
                 <i class="fa fa-eye"></i>
               </a>
-              <a routerLink="/contacts/edit/:contactId" class="btn btn-success">
+              <a routerLink="/contacts/edit/{{contact.id}}" class="btn btn-success">
                 <i class="fa fa-edit"></i>
               </a>
-              <a class="btn btn-danger">
+              <a class="btn btn-danger" (click)="deleteContact(contact.id)">
                 <i class="fa fa-trash"></i>
               </a>
             </div>
