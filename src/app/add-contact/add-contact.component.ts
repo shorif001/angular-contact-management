@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MyContact } from '../models/myContact';
+import { MyGroup } from '../models/myGroup';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-add-contact',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddContactComponent implements OnInit {
 
-  constructor() { }
+  loading:boolean = false;
+  contact:MyContact = {} as MyContact;
+  errorMessage:string | null = null;
+  groups:MyGroup = {} as MyGroup;
+
+  constructor(private contService:ContactService) { }
 
   ngOnInit(): void {
+    this.contService.getAllGroups().subscribe((data:MyGroup)=>{
+      this.groups = data;
+    }, (error)=>{
+      this.errorMessage = error;
+    })
   }
 
 }

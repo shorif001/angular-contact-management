@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MyContact } from '../models/myContact';
+import { MyGroup } from '../models/myGroup';
 import { ContactService } from '../services/contact.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class ViewContactComponent implements OnInit {
   loading:boolean = false;
   contact:MyContact = {} as MyContact;
   errorMessage:string | null = null;
+  group:MyGroup = {} as MyGroup;
 
   constructor(private activatedRoute:ActivatedRoute, private contService:ContactService) { }
 
@@ -27,6 +29,9 @@ export class ViewContactComponent implements OnInit {
       this.contService.getContacts(this.contactId).subscribe((data:MyContact)=>{
         this.contact = data;
         this.loading = false;
+        this.contService.getGroup(data).subscribe((data:MyGroup)=>{
+          this.group = data;
+        })
       }, (error)=>{
         this.errorMessage = error;
         this.loading = false;
@@ -35,7 +40,7 @@ export class ViewContactComponent implements OnInit {
   }
 
   isNotEmpty(){
-    return Object.keys(this.contact).length >0;
+    return Object.keys(this.contact).length >0 && Object.keys(this.group).length > 0;
   }
 
   
